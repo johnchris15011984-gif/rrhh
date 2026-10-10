@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Permite conexiones http:// (sin cifrar) porque el servidor de la RIS puede estar en una IP local.
+  RECOMENDADO: publicar la API con https:// (certificado gratuito Let's Encrypt) y cambiar
+  cleartextTrafficPermitted a "false", porque por esta conexión viajan el PIN y la clave de RRHH.
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>
